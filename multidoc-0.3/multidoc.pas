@@ -41,14 +41,14 @@ Abstract:
   TMultiDoc: The container to childdocs, or "childforms".
 
 ToDo List:
-  + Test CLX Compatibility (in Delphi7 CLX work. Should be tested in Kylix)
+  + Test CLX Compatibility (in Delphi7 CLX work. Must be tested in Kylix)
   + Minimize Method
   + Adjust, in "Minimized Mode", to ShowPopup if has clicked in TitleBar
 
 Know Issues:
   - ???
 
-Warnings:
+Warning(s):
   * You don't should NEVER to use 'MultiDocX.Childs[X].Free;' "directly"
     Use MultiDocX.Childs[X].Close, so MultiDoc can recalculate ChildIndex
 
@@ -132,10 +132,10 @@ type
     procedure SetActiveChild(N: Integer);
     procedure TileVertical;
     procedure TileHorizontal;
-    property Childs: ChildArray read FChild;
-  published
     property ActiveChild: TChildDoc read GetActiveChild;
     property ActiveObject: TForm read GetActiveObject;
+    property Childs: ChildArray read FChild;
+  published
     property ChildCount: Integer read GetChildCount;
     property KeepLastChild: Boolean read FKeepLastChild write FKeepLastChild;
     property Maximized: Boolean read FMaximized write SetMaximized;
@@ -202,6 +202,7 @@ begin
   Inc(FChildIndex);
   SetLength(FChild, FChildIndex + 1);
   FChild[FChildIndex] := TChildDoc.Create(Self);
+
   with FChild[FChildIndex] do
   begin
     Hide;

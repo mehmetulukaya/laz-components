@@ -40,9 +40,6 @@ type
     Panel1: TPanel;
     procedure BtnCloseChildClick(Sender: TObject);
     procedure BtnRestoreChildClick(Sender: TObject);
-    procedure ButtonsBarClickClose(Sender: TObject);
-    procedure ButtonsBarClickMaximize(Sender: TObject);
-    procedure ButtonsBarClickMinimize(Sender: TObject);
     procedure CascadeClick(Sender: TObject);
     procedure Close1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -111,32 +108,8 @@ begin
   MultiDoc1.Maximized := not(MultiDoc1.Maximized); // or Maximized := False;
 end;
 
-procedure TForm1.ButtonsBarClickClose(Sender: TObject);
-begin
- If MultiDoc1.ActiveObject is TfrChild then
-    MultiDoc1.ActiveChild.Close;
-  ButtonsBar.Visible := (MultiDoc1.ChildCount <> 0);
-end;
-
-procedure TForm1.ButtonsBarClickMaximize(Sender: TObject);
-begin
- If MultiDoc1.ActiveObject is TfrChild then
-  MultiDoc1.Maximized := not(MultiDoc1.Maximized);
-end;
-
-procedure TForm1.ButtonsBarClickMinimize(Sender: TObject);
-begin
- If MultiDoc1.ActiveObject is TfrChild then
-  //MultiDoc1.Maximized := not(MultiDoc1.Maximized);
-  MulTiDoc1.ActiveChild.Maximized:=False;
-
-  ButtonsBar.Visible:=False;
-end;
-
 procedure TForm1.BtnCloseChildClick(Sender: TObject);
 begin
- ShowMessage('Min');
-
   If MultiDoc1.ActiveObject is TfrChild then
     MultiDoc1.ActiveChild.Close;
   ButtonsBar.Visible := (MultiDoc1.ChildCount <> 0);
