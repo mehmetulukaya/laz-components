@@ -10,7 +10,7 @@ object frChild: TfrChild
   ClientHeight = 350
   ClientWidth = 600
   Color = clSilver
-  LCLVersion = '0.9.28.2'
+  LCLVersion = '1.6.0.4'
   object MainPanel: TPanel
     Left = 25
     Height = 300

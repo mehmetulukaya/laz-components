@@ -29,7 +29,7 @@ type
     MainMenu1: TMainMenu;
     File1: TMenuItem;
     Close1: TMenuItem;
-    Cascade: TMenuItem;
+    MenuCascade: TMenuItem;
     TileVer: TMenuItem;
     TileHor: TMenuItem;
     MenuItem3: TMenuItem;
@@ -43,7 +43,7 @@ type
     procedure ButtonsBarClickClose(Sender: TObject);
     procedure ButtonsBarClickMaximize(Sender: TObject);
     procedure ButtonsBarClickMinimize(Sender: TObject);
-    procedure CascadeClick(Sender: TObject);
+    procedure MenuCascadeClick(Sender: TObject);
     procedure Close1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure NewChild1Click(Sender: TObject);
@@ -142,7 +142,7 @@ begin
   ButtonsBar.Visible := (MultiDoc1.ChildCount <> 0);
 end;
 
-procedure TForm1.CascadeClick(Sender: TObject);
+procedure TForm1.MenuCascadeClick(Sender: TObject);
 begin
   MultiDoc1.Cascade;
 end;

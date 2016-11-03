@@ -10,12 +10,14 @@ object Form1: TForm1
   ClientWidth = 700
   Menu = MainMenu1
   OnCreate = FormCreate
-  LCLVersion = '0.9.28.2'
+  LCLVersion = '1.6.0.4'
   object MultiDoc1: TMultiDoc
     Left = 0
     Height = 362
     Top = 18
     Width = 700
+    HorzScrollBar.Page = 1
+    VertScrollBar.Page = 1
     Align = alClient
     Color = clAppWorkspace
     ParentColor = False
@@ -431,9 +433,9 @@ object Form1: TForm1
     end
     object Window1: TMenuItem
       Caption = 'Window'
-      object Cascade: TMenuItem
+      object MenuCascade: TMenuItem
         Caption = 'Cascade'
-        OnClick = CascadeClick
+        OnClick = MenuCascadeClick
       end
       object TileVer: TMenuItem
         Caption = 'Tile Vertically'
